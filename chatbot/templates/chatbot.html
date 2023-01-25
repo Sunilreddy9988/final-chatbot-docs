@@ -1,0 +1,80 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.question-bubble {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.question-bubble {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <h1>PRworkflow Chatbot</h1>
+    {% if answer %}
+        <p>{{ answer }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="user_input" placeholder="Ask a question">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- <h1>Frequently Asked Questions</h1>
+{% for faq in faqs %}
+    <div class="row">
+        <div class="col-md-6 offset-md-6">
+            <div class="question-bubble">
+                {{ faq.question }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-6">
+            <div class="answer-bubble">
+                {{ faq.answer }}
+            </div>
+        </div>
+    </div>
+{% endfor %} -->
+</body>
+</html>
